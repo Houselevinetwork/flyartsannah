@@ -1,0 +1,13 @@
+project_id = "panxglbqfnovnxqohlcb"
+
+[functions.amadeus-locations]
+verify_jwt = false
+
+[functions.amadeus-flight-offers]
+verify_jwt = false
+
+[functions.amadeus-multicity]
+verify_jwt = false
+
+[functions.save-search]
+verify_jwt = false

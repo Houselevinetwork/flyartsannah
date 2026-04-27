@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 217 91% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 217 91% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 91% 15%;
+
+    --primary: 217 91% 20%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 215 20% 90%;
+    --secondary-foreground: 217 91% 20%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 217 91% 25%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 20%;
+
+    /* Art Sannah's Sky Design Tokens */
+    --sky-navy: 217 91% 20%;
+    --sky-navy-light: 217 70% 35%;
+    --sky-navy-dark: 217 95% 15%;
+    --sky-blue: 217 91% 60%;
+    --sky-blue-light: 217 85% 75%;
+    --sky-silver: 220 9% 85%;
+    --sky-white: 0 0% 98%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 20%), hsl(217 70% 35%));
+    --gradient-sky: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 70% 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 95% 15%), hsl(217 91% 20%), hsl(217 91% 60%));
+    
+    /* Shadows */
+    --shadow-premium: 0 10px 30px -10px hsl(217 91% 20% / 0.3);
+    --shadow-sky: 0 8px 25px -8px hsl(217 91% 60% / 0.4);
+    --shadow-elegant: 0 4px 20px -4px hsl(217 91% 20% / 0.15);
+    
+    /* Animations */
+    --transition-premium: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 217 91% 20%;
+    --sidebar-primary: 217 91% 20%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 215 20% 90%;
+    --sidebar-accent-foreground: 217 91% 20%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  .dark {
+    --background: 217 95% 15%;
+    --foreground: 0 0% 98%;
+
+    --card: 217 91% 20%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 217 91% 20%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 217 91% 20%;
+
+    --secondary: 217 70% 25%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 217 70% 25%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 70% 25%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 217 70% 25%;
+    --input: 217 70% 25%;
+    --ring: 217 91% 60%;
+    
+    --sidebar-background: 217 95% 15%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 217 95% 15%;
+    --sidebar-accent: 217 70% 25%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 217 70% 25%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(135deg, hsl(217 95% 15%), hsl(217 91% 20%), hsl(217 91% 60%));
+    min-height: 100vh;
+  }
+
+  /* Dropdown animation */
+  @keyframes dropdown {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-dropdown {
+    animation: dropdown 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* 🔥 Hide scrollbar across all browsers */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+}
